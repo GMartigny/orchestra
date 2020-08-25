@@ -6,9 +6,12 @@ Musical text notation to let creativity loose.
 ## Example
 
     "Bella Ciao"
-    $ #F
+    $ E_ #F_ G_
     $ 120bpm
-    TODO
+    || {- B_ E F A E}/2 - :|
+    {- B_ E F}/2 A {G F}/2 A {G F}/2 B B B/2
+    {B A B}/2 C C {- C B A}/2 C B -
+    {A G}/2 F B G F 2E
 
 
 ## What ?
@@ -23,7 +26,7 @@ For a complete break-down, take a look at [the documentation](./documentation.md
 By diverging from classical music scores, Orchestra offer as much depth without the strictness. Orchestra only have what's useful to the music.
 
 Everything is written only using common keyboard characters. This mean you don't need complex music writing programs, but just any text editor.
-This also mean that everyone can use Orchestra, whatever the sight ability or musical knowledge.
+This also mean everyone can use Orchestra, whatever the sight ability or musical knowledge.
 
 Orchestra can also be used to transfer music in a pure textual form and open the possibility to generate music programmatically.
 

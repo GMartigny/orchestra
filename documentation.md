@@ -13,9 +13,12 @@ Unlike other notation, Orchestra is not meant to generate a music score but musi
 ## Example
 
     "Bella Ciao"
-    $ #F
+    $ E_ #F_ G_
     $ 120bpm
-    TODO
+    || {- B_ E F A E}/2 - :|
+    {- B_ E F}/2 A {G F}/2 A {G F}/2 B B B/2
+    {B A B}/2 C C {- C B A}/2 C B -
+    {A G}/2 F B G F 2E
 
 
 ## Notes
