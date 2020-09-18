@@ -61,22 +61,22 @@ Both can be used simultaneously for more complex timing.
 Using `0` is **not valid**, neither for multiplying nor dividing, `0A` and `A/0` will produce an error.
 
 
-## Incidentals
+## Accidentals
 
-To slightly modify the pitch of a note, you can use incidentals.
+To slightly modify the pitch of a note, you can use accidentals.
 
  - `#` - Sharp, raises by a semitone
  - `&` - Flat, lowers by a semitone
  - `@` - Natural, cancel any previous accidental to this note
 
-Incidentals are placed in front of a note as many time as you want.
+Accidentals are placed in front of a note as many time as you want.
 
     #A B &&C @D
 
 Two semitones equals one tone, this means that `##A` is the same as `B`.
 Due to the fact that `#` and `&` cancel each other, `#&&#A` is equal to `A`.
-You can use incidentals in any order.
-However, natural has a higher priority, cancelling any other incidental. This means that `##@###A` is the same as `A`.
+You can use accidentals in any order.
+However, natural has a higher priority, cancelling any other accidental. This means that `##@###A` is the same as `A`.
 
 > Note that, due to the limitation of [12-TET](https://en.wikipedia.org/wiki/12_equal_temperament), there's only a half-step between `B`-`C` and `E`-`F`.  
 > Therefore, `#B` is the same as `C` and `&C` is the same as `B` (likewise for `E` and `F`).
@@ -89,25 +89,25 @@ By default, any note is in the "middle C" (C4) octave. Of course, you can change
  - `_` - Lower by one octave
  - `^` - Raise by one octave
  - `~` - Return to the default (C4) octave
- 
-Octaves are defined after the note as many time as you want.
+
+Octaves are defined after the note.
 
     A_ B C^^ D~
     
 Remember `H` we saw above ? well, `H` is the same as `A^`, `I` is the same as `B^` ...
 
-Much like incidentals, octaves can be change in any order and as many times as you want.
+Much like accidentals, octaves can be change in any order and as many times as you want.
 In the same way, `_` and `^` cancel each other, `A_^^_` is equal to `A`.
 However, return has a higher priority, so `A__~___` is the same as `A`.
 
 
 ## Recap
 
-Any note can have incidentals, a timing, a pitch and octave modifiers in that order.
+Any note can have accidentals, a timing, a pitch and octave modifiers in that order.
 
 ![example of #2A/3___](./example.png)
 
- - `#` any number of incidentals (here 1 semitone higher)
+ - `#` any number of accidentals (here 1 semitone higher)
  - `2`, `/3` the note timing (here 2/3 of a beat)
  - `A` the note pitch (here 440Hz)
  - `___` the octave modifier (here 3 octaves lower)
@@ -116,7 +116,8 @@ Any note can have incidentals, a timing, a pitch and octave modifiers in that or
 ## Grouping
 
 You might want to apply a modifier to multiple notes at the same time to reduce repetition.
-Tempo, incidentals and octave modifiers can be applied to a group which will be applied to all notes in that group.
+Tempo, accidentals and octave modifiers can be applied to a group which will be applied to all notes in that group.
+There are multiple types of grouping.
 
 ### Neutral
 
@@ -141,7 +142,7 @@ Can be simplified to:
 In order to play multiple notes at the same time, you have to group them inside chevrons `<>`.
 
     <A B 3C> D
-> The length in time of the group will be defined by the longest note inside. Here the chord is 3 beats long.
+> The length in time of the chords will be defined by the longest note inside. Here the chord is 3 beats long.
 
 Chevrons **can't** be nested and will produce an error otherwise, `<A <B C>>` is invalid.
 
@@ -157,7 +158,7 @@ Parenthesis **can't** be nested and will produce an error otherwise, `(A (B C))`
 
 ## Bars
 
-Classics music scores have bars delimiting each measures.
+Classic music scores have bars delimiting each measures.
 Orchestra allow you to add pipe `|` to your composition, but this is purely decorative and only serves to improve readability.
 
     || A B C D | E F G H ||
@@ -202,7 +203,7 @@ Can be simplified to:
 
 ### Tempo
 
-Starting a line with a dollar `$` followed by any integer will denote the temp in BPM. You can add the optional keyword `bpm` for better clarity.
+Starting a line with a dollar `$` followed by any integer will denote the tempo in BPM. You can add the optional keyword `bpm` for better clarity.
 
     $ 120bpm
 
@@ -210,7 +211,7 @@ Starting a line with a dollar `$` followed by any integer will denote the temp i
 ### Key signature
 
 Starting a line with a dollar `$` followed by a modified note will apply these modifiers to every instance of that note.
-It can be incidentals, a timing, or octave modifiers or all of them at once.
+It can be accidentals, timing, octave modifiers or all of them at once.
 
     $ #3F/2_ &D
 > Every `F` note will be sharpened, last for 3/2 of a beat and lowered by 1 octave.  
@@ -227,7 +228,7 @@ These modifiers are absolute. They will completely override previous similar glo
 To cancel globals, use the related cancel sign (`@`, `~` or `1`).
 
     $ @A
-> Remove all previous global incidentals on `A`.
+> Remove all previous global accidentals on `A`.
 
 If you want to apply the modifiers to all pitch, you can use the wildcard sign `*`.
 

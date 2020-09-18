@@ -18,7 +18,7 @@ Musical text notation to let creativity loose.
 
 Orchestra let you write music like you write code.
 By striking the balance between adhering to standard and freeing itself, it open the door to everyone and let your creativity loose.
-For a complete break-down, take a look at [the documentation](./documentation.md).
+For a complete break-down, take a look at [the documentation](./docs/documentation.md) ([FR](./docs/documentation-fr.md)).
 
 
 ## How ?
